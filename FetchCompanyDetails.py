@@ -1,3 +1,5 @@
+import json
+
 import requests
 import argparse
 
@@ -30,7 +32,7 @@ def Req_details(mac_address):
 
     if response.status_code != 200:
         raise Exception("MAC Addressis not valid!")
-    return response.content.decode()
+    return response.content.decode('utf-8')
 
 
 if __name__ == "__main__":
@@ -38,8 +40,8 @@ if __name__ == "__main__":
     print("[+] Checking Details...")
 
     try:
-        details = Req_details(mac_address)
-        print("[+] Device vendor is " + details)
+        details = json.loads(Req_details(mac_address))
+        print("Device vendor is " + str(details["vendorDetails"]["companyName"]))
     except:
         #if something goes wrong it will throw an exception
         print("An error appeared! Please check if there are no spaces in the mac address")
