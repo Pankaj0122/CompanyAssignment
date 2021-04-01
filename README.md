@@ -1,4 +1,4 @@
-#Assignment 1
+# Assignment 1
 
 Program is written to get the vendor details using the API key and MACaddress.
 
