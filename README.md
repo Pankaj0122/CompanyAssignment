@@ -11,3 +11,6 @@ On CLI user has to provide:
 
  For example:  
  `python FetchCompanyDetails -m 45:48:39:fe:ff:56`
+ 
+ Output example:  
+**Device vendor is Cumulus Networks, Inc**
